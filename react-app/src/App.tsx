@@ -3,19 +3,19 @@ import Card, { CardBody } from "./components/Card";
 import List from "./components/List";
 
 function App() {
-  const list = ["Uno", "Dos", "Tres"];
-
+  const list: string[] = [];
   const handleSelect = (elemento: string) => {
     console.log("imprimiendo", elemento);
   };
-  const handleSelect2 = (elemento: string) => {
-    console.log("imprimiendo", elemento);
-  };
+
+  const contenido = list.length !== 0 && (
+    <List data={list} onSelect={handleSelect} />
+  );
+
   return (
     <Card>
       <CardBody title="Hola mundo" text="Este es el texto" />
-      <List data={list} onSelect={handleSelect} />
-      <List data={list} onSelect={handleSelect2} />
+      {contenido}
     </Card>
   );
 }
