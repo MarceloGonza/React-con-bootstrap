@@ -31,8 +31,12 @@ function App() {
   const remMinion = () => setData(data.slice(0, -1));
   return (
     <Card>
-      <Button onClick={addMinion}>Agregar</Button>
-      <Button onClick={remMinion}>Eliminar</Button>
+      <Button isLoading={true} onClick={addMinion}>
+        Agregar
+      </Button>
+      <Button isLoading={false} onClick={remMinion}>
+        Eliminar
+      </Button>
       <List data={data} />
     </Card>
   );
